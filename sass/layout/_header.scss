@@ -1,23 +1,39 @@
 
 .header{
     border-bottom: 1px solid #ECECEC;
+    position: relative;
     
     padding-top: 32px;
     padding-bottom: 22px;
+}
 
-    & .container {
+.header-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hidden-header {
+    display: none;
+    @media screen and (min-width: 768px) {
         display: flex;
-        align-items: center;
     }
 }
 
 .nav {
     display: flex;
     align-items: center;
+    @media screen and (min-width:1200px) {
+        margin-right: 265px;
+    }
 }
 
 .nav__list {
     display: flex;
+    margin-right: 84px;
+    @media screen and (min-width: 1200px) {
+        margin-right: 0;
+    }
 }
 
 .nav__link-text {
@@ -26,15 +42,18 @@ position: relative;
 
 .studio::after,
 .portfolio::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -31px;
-    display: block;
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    background-color: $akcent-color;
+    display: none;
+    @media screen and (min-width: 768px) {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: -34px;
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $akcent-color;
+    }
 }
 
 .nav__link {
@@ -52,6 +71,7 @@ position: relative;
     &:focus {
         color: $akcent-color;
     }
+
 }
 
 .nav__link-text:not(:last-child) {
@@ -59,45 +79,239 @@ position: relative;
 }
 
 .contact-header {
-    display: flex;
+    width: 100%;
+    height: auto;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.1428;
     letter-spacing: 0.02em;
     margin-left: auto;
-    height: 16px
+    @media screen and (min-width: 1200px) {
+    display: flex;
+    }
 }
 
 .contact-header__link {
+    width: auto;
+    height: 14px;
     color: $main-text-color;
     display: flex;
+
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    &:not(:last-child) {
+        margin-bottom: 10px
+    }
+
+    span {
+        margin-left: 8px;
+    }
 
     &:focus,
     &:hover {
         color: $akcent-color;
         fill: $akcent-color;
     }
+
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 }
+
+
 
 .contact-header__link:not(:last-child) {
     margin-right: 50px;
 }
 
 .contact-header__logo {
-    width: 16px;
-    fill: $main-text-color;
-    margin-right: 10px;
-    transition-property: fill;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    .contact-header__link:hover &,
-    .contact-header__link:focus & {
-        color: $akcent-color;
-        fill: $akcent-color;
-    }
+    width: 14px;
+    height: 14px;
 }
 
+.header__mobile-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    line-height: 0;
+    background-color: transparent;
+    border: none;
+    padding: 10px 0;
+  @media screen and (min-width: 767px) {
+      display: none;
+    }
+  }
+
+  .header__mobile-icon {
+    width: 40px;
+    height: 40px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    .header__mobile-btn:hover &,
+    .header__mobile-btn:focus & {
+      fill: $akcent-color;
+    }
+  }
+
+
+
+
+.header-menu {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffffff;
+        overflow: auto;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      
+        &.is-open {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+}
+
+.mobile__container {
+    position: relative;
+    padding: 48px 25px;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    
+    height: 100vh;
+    justify-content: space-between;
+}
+
+
+
+.mobile-nav__item:not(:last-child) {
+    padding-bottom: 32px;
+  }
+
+.mobile-nav__link {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    color: $title-color;
+    &:hover,
+    &:focus {
+      color: $akcent-color;
+    }
+  }
+
+ .contact-mobile {
+      margin-bottom: 64px;
+    }
+
+.contact-mobile__item:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+.contact-mobile__link {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: $main-text-color;
+    &:hover,
+    &:focus {
+      color: $akcent-color;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+  }
+
+
+  .mobile-social {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .mobile-social__item {
+    display: flex;
+  }
+
+
+  .mobile-social__item:not(:last-child) {
+    margin-right: 10px;
+    &::after {
+      content: '';
+      display: inline-flex;
+      width: 1px;
+      height: 22px;
+      background-color: rgba(33, 33, 33, 0.2);
+      margin-left: 10px;
+    }
+  }
+
+  .mobile-social__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+
+    color: $akcent-color;
+    &:focus,
+    &:hover {
+      color: #188ce8;
+    }
+  }
+
+.mobile__close-icon {
+    z-index: 3;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    line-height: 0;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    .mobile__close-btn:hover &,
+    .mobile__close-btn:focus & {
+      fill: $akcent-color;
+    }
+  }
+
+  .mobile__close-btn {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        line-height: 0;
+  }
+
+
+  
+  @media screen and (min-width: 768px) {
+    .mobile {
+      display: none;
+    }
+  }
+
+
+.header__mobile-btn {
+    line-height: 0;
+    background-color: transparent;
+    border: none;
+    padding: 10px 0;
+    @media screen and (min-width: 767px) {
+        display: none;
+    }
+  }
+  
