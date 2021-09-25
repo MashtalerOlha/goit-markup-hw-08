@@ -1,0 +1,248 @@
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: visible;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 528px;
+    height: 581px;
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    background-color: $secondary-title-color;
+}
+
+.modal-form {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $title-color;
+
+    margin-bottom: 27px;
+}
+
+.modal-label {
+    // font-family:  ;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+
+    color: $main-text-color;
+
+}
+
+.modal-group {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.modal-input {
+    width: 100%;
+    height: 40px;
+    border:  1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 42px;
+}
+
+.modal-input:focus ~ .modal-logo,
+.modal-input:hover ~ .modal-logo {
+  fill: #2196F3;
+  
+  transition-property: color;
+  transition-duration: 5250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* .modal-input:hover{
+    border: 1px solid #2196F3;
+}
+
+.modal-input:hover + .modal-logo {
+    fill: #2196F3;
+} */
+
+.modal-form input:hover, .modal-form input:focus, .modal-form input:active {
+    cursor: pointer;
+    border-color: #2196F3;
+    outline: none;
+  }
+
+
+/* .modal-form input {
+    transition-property: color, fill, border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .modal-form input:hover {
+    cursor: pointer;
+    border-color: #2196F3;
+  }
+
+  .modal-form textarea {
+    transition-property: color, fill, border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    height: 120px;
+    padding: 12px 16px;
+  }
+  
+  .modal-form textarea:hover {
+    cursor: pointer;
+    border-color: #2196F3;
+  } */
+
+.modal-textarea {
+    resize: none;
+    width: 448px;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    padding: 12px 16px;
+}
+
+.modal-form textarea:hover, .modal-form textarea:focus, .modal-form textarea:active {
+    cursor: pointer;
+    border-color: #2196F3;
+    outline: none;
+  }
+
+.modal-logo {
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-label {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 12px;
+}
+
+.checkbox-icon {
+    fill: #FFFFFF;
+    background-color: #FFFFFF;
+    border: 2px solid #212121;
+    border-radius: 2px;
+
+}
+
+.checkbox-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    
+  }
+
+.checkbox-input:checked + .checkbox-icon {
+    background-color: #2196F3;
+    border-color: #2196F3;
+  }
+
+
+.modal-option-span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+
+    letter-spacing: 0.03em;
+
+    color: #757575;
+}
+
+.modal-option-span > a {
+    color: $akcent-color;
+}
+
+.btn-submit {
+    margin: auto;
+    text-align: center;
+    width: 200px;
+    height: 50px ;
+    border-radius: 4px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;    
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: $secondary-title-color;
+    background-color: $akcent-color;
+    cursor: pointer;
+}
+
+
+
+.modal-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    cursor: pointer;
+
+}
+
+.modal-button:hover {
+    fill: #2196F3;
+  }
+
+.modal-logo-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 18px;
+    width: 18px;
+}
+
+.modal-textarea::placeholder {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+
+    color: rgba(117, 117, 117, 0.5);
+}
