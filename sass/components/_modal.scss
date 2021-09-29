@@ -160,7 +160,13 @@
 .checkbox-label {
     margin-top: 10px;
     margin-bottom: 30px;
-    margin-left: 12px;
+    margin-left: 0px;
+
+    @media screen and (min-width: 1200px) {
+        margin-left: 12px;
+    }
+
+    
 }
 
 .checkbox-icon {
@@ -191,12 +197,16 @@
 
 .modal-option-span {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.71;
 
     letter-spacing: 0.03em;
 
     color: #757575;
+
+    @media screen and (min-width: 1200px) {
+        font-size: 14px;
+    }
 }
 
 .modal-option-span > a {

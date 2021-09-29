@@ -61,8 +61,22 @@ ul {
 .header {
   border-bottom: 1px solid #ECECEC;
   position: relative;
-  padding-top: 32px;
-  padding-bottom: 22px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding-top: 21px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
 }
 
 .header-container {
@@ -118,7 +132,7 @@ ul {
     content: " ";
     position: absolute;
     left: 0;
-    bottom: -34px;
+    bottom: -33px;
     display: block;
     width: 100%;
     height: 4px;
@@ -192,6 +206,8 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-bottom: 0;
+    margin-top: 3px;
   }
 }
 
@@ -201,12 +217,12 @@ ul {
 
 .contact-header__logo {
   width: 14px;
-  height: 14px;
+  height: 17px;
 }
 
 .header__mobile-btn {
   position: absolute;
-  top: 12px;
+  top: 0px;
   right: 15px;
   line-height: 0;
   background-color: transparent;
@@ -544,7 +560,7 @@ ul {
 @media screen and (min-width: 768px) {
   .superiority__item {
     width: 354px;
-    height: 251px;
+    height: auto;
   }
   .superiority__item:nth-child(2n + 1) {
     margin-right: 30px;
@@ -674,13 +690,19 @@ ul {
 }
 
 .team-list {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 @media screen and (min-width: 768px) {
   .team-list {
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .team-list {
+    margin-top: 50px;
   }
 }
 
@@ -787,6 +809,13 @@ ul {
 .clients {
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .clients {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .clients__title {
@@ -1239,10 +1268,13 @@ ul {
   background: #FFFFFF;
   border: 1px solid #EEEEEE;
   margin-right: 30px;
-  margin-bottom: 30px;
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .project-card:focus, .project-card:focus-visible, .project-card:hover {
@@ -1270,6 +1302,9 @@ ul {
   }
   .project-card:nth-child(3n) {
     margin-right: 0px;
+  }
+  .project-card:nth-last-child(-n + 3) {
+    margin-bottom: 0px;
   }
 }
 
@@ -1448,7 +1483,13 @@ ul {
 .checkbox-label {
   margin-top: 10px;
   margin-bottom: 30px;
-  margin-left: 12px;
+  margin-left: 0px;
+}
+
+@media screen and (min-width: 1200px) {
+  .checkbox-label {
+    margin-left: 12px;
+  }
 }
 
 .checkbox-icon {
@@ -1476,10 +1517,16 @@ ul {
 
 .modal-option-span {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: #757575;
+}
+
+@media screen and (min-width: 1200px) {
+  .modal-option-span {
+    font-size: 14px;
+  }
 }
 
 .modal-option-span > a {
